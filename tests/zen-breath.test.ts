@@ -2,12 +2,15 @@ import type { On } from 'claude-code'
 import { expect, mock, test } from 'claude-code/testing'
 
 /** The engine pieces the mod leans on that the test host does not provide. */
-function host(on: On): void {
+function host(on: On, seen: { status?: string } = {}): void {
   on('session.start', (_$, e) => ({ cwd: e.cwd }))
   on('command.register', (_$, e) => ({ value: { command: e.name } }))
   on('ui.open', () => ({ value: { isPlaced: true as const } }))
   on('ui.close', () => ({ value: undefined }))
-  on('ui.status', () => ({ value: undefined }))
+  on('ui.status', (_$, e) => {
+    seen.status = e.text
+    return { value: undefined }
+  })
   on('ui.toast', () => ({ value: undefined }))
 }
 
@@ -94,4 +97,23 @@ test('unknown arguments are refused with usage', async ($, on) => {
   await $.session.start({ cwd: '/tmp/zen-breath', surface: 'terminal', isInteractive: true })
   const out = await $.command.run({ ...RUN, command: 'meditate', args: 'banana' })
   expect(out.text).toMatch(/不认识的参数/)
+})
+
+test('the stop button ends the session and clears the status line', async ($, on) => {
+  const clock = mock.clock(on)
+  mock.store(on)
+  const seen: { status?: string } = {}
+  host(on, seen)
+  await $.session.start({ cwd: '/tmp/zen-breath', surface: 'terminal', isInteractive: true })
+  await $.command.run({ ...RUN, command: 'meditate', args: '2' })
+  await clock.advance(3_000)
+  expect(seen.status).toMatch(/剩余 01:57/)
+
+  const ui = await $.ui.mount(PANE)
+  await ui.press({ key: 'stop' })
+  expect(seen.status).toBeUndefined()
+  await clock.advance(5_000)
+  expect((await ui.find({ type: 'Text', text: /剩余|^完成$/ }))?.text).toBe('剩余 02:00')
+  expect((await ui.find({ key: 'toggle' }))?.props.label).toBe('开始')
+  await ui.unmount()
 })

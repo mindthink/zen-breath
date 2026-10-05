@@ -6,6 +6,13 @@ A meditation breathing pane for Claude Code. Type `/meditate` and an ASCII Buddh
 appears beside your terminal, knocking a wooden fish to pace your breath. When the
 session ends it records your lifetime count and daily streak.
 
+![zen-breath demo](./docs/demo.gif)
+
+*A one-minute demo: box breathing, then `m` to switch to 4-7-8, `p` to pause, `q` to stop.*
+
+<details>
+<summary>Text sketch (translated; the pane itself is in Chinese: 吸气 inhale, 屏息 hold, 呼气 exhale)</summary>
+
 ```
  🧘 Box breathing 4-4-4-4                         04:32 left
 
@@ -31,8 +38,7 @@ session ends it records your lifetime count and daily streak.
  12 sessions · 58 minutes · 4-day streak
 ```
 
-The pane's labels are in Chinese (吸气 inhale, 屏息 hold, 呼气 exhale); the layout above
-is a translated sketch.
+</details>
 
 ## Features
 

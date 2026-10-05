@@ -281,7 +281,8 @@ export const register: Register = on => {
         return { ...cur, pattern: nextPattern, phaseIndex: 0, phaseElapsed: 0, knocks: 0 }
       }).then(next => $.ui.status(statusLine(next)))
 
-    const quit = () => $.ui.close({ id: PANE })
+    // Our own ui.close call does not pass through our ui.close hook, so stop first.
+    const quit = () => stop($).then(() => $.ui.close({ id: PANE }))
 
     return (
       <Box flexDirection="column" paddingX={1}>

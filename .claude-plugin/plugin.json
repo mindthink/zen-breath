@@ -1,6 +1,6 @@
 {
   "name": "zen-breath",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "冥想呼吸面板：/meditate 开始一段定时的引导呼吸（方箱 / 4-7-8 / 平静），记录累计次数与连续天数",
   "author": {
     "name": "Kevin Chen",

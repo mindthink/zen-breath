@@ -5,6 +5,13 @@
 Claude Code 里的冥想呼吸面板。输入 `/meditate`，终端侧边弹出一尊 ASCII 佛祖，
 跟着节奏敲木鱼带你呼吸；结束后记录累计次数与连续天数。
 
+![zen-breath demo](./docs/demo.gif)
+
+*面板里敲木鱼的其实是 ASCII 佛祖，上面是 1 分钟示范：方箱呼吸 → 按 m 换成 4-7-8 → 按 p 暂停 → 按 q 结束。*
+
+<details>
+<summary>纯文本预览</summary>
+
 ```
  🧘 方箱呼吸 4-4-4-4                              剩余 04:32
 
@@ -29,6 +36,8 @@ Claude Code 里的冥想呼吸面板。输入 `/meditate`，终端侧边弹出�
 
  累计 12 次 · 58 分钟 · 连续 4 天
 ```
+
+</details>
 
 ## 功能
 
