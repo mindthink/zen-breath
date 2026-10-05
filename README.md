@@ -1,5 +1,7 @@
 # zen-breath 🧘
 
+中文 | [English](./README.en.md)
+
 Claude Code 里的冥想呼吸面板。输入 `/meditate`，终端侧边弹出一尊 ASCII 佛祖，
 跟着节奏敲木鱼带你呼吸；结束后记录累计次数与连续天数。
 
