@@ -7,7 +7,7 @@ Claude Code 里的冥想呼吸面板。输入 `/meditate`，终端侧边弹出�
 
 ![zen-breath demo](./docs/demo.gif)
 
-*面板里敲木鱼的其实是 ASCII 佛祖，上面是 1 分钟示范：方箱呼吸 → 按 m 换成 4-7-8 → 按 p 暂停 → 按 q 结束。*
+*1 分钟示范：方箱呼吸，按 m 切到 4-7-8，按 p 暂停，按 q 结束。*
 
 <details>
 <summary>纯文本预览</summary>
