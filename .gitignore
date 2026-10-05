@@ -1,0 +1,4 @@
+# Claude Code 在加载 mod 时自动生成的类型声明（.claude-plugin/types/.gitignore 已自忽略）
+node_modules/
+*.log
+.DS_Store

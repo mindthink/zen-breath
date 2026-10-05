@@ -1,0 +1,21 @@
+{
+  "name": "zen-breath",
+  "owner": {
+    "name": "Kevin Chen",
+    "url": "https://github.com/mindthink"
+  },
+  "metadata": {
+    "description": "Claude Code 里的冥想呼吸面板",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "zen-breath",
+      "source": "./",
+      "description": "冥想呼吸面板：/meditate 开始一段定时的引导呼吸（方箱 / 4-7-8 / 平静），记录累计次数与连续天数",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": ["meditation", "breathing", "pane", "mod", "wellness"]
+    }
+  ]
+}
